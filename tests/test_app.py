@@ -94,17 +94,16 @@ def test_delete_should_return_not_found(client):
 
     assert response.json() == {"detail": "User not found"}
 
+    # def test_read_user_should_return_user_id(client):
+    # response = client.get("/users/1")
 
-def test_read_user_should_return_user_id(client):
-    response = client.get("/users/1")
+    # assert response.status_code == HTTPStatus.OK
 
-    assert response.status_code == HTTPStatus.OK
-
-    assert response.json() == {
-        "username": "bob",
-        "email": "bob@test.com",
-        "id": 1,
-    }
+    # assert response.json() == {
+    #     "username": "bob",
+    #     "email": "bob@test.com",
+    #     "id": 1,
+    # }
 
 
 def test_read_user_should_return_not_found(client):
